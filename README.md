@@ -73,7 +73,7 @@ The Semiotic Standard symbols themselves are the intellectual property of Ron Co
 - [*Alien* (1979) - IMDb](https://www.imdb.com/title/tt0078748/)
 - [Science Fiction Design History](https://en.wikipedia.org/wiki/Science_fiction_film)
 
-### Vector Icons
+### Vector Symbols
 - <a href="https://github.com/louh/semiotic-standard">semiotic-standard</a> by <a href="https://github.com/louh">@louh</a>
 
 ---
