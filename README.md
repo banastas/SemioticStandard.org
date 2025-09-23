@@ -1,8 +1,7 @@
 # SemioticStandard.org
+<img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
 
 Ron Cobb's iconic "Semiotic Standard" symbols for spacecraft, originally created for the 1979 science fiction film *Alien*.
-
-<img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
 
 - [About the Semiotic Standard](#about-the-semiotic-standard)
 - [History and Cultural Impact](#history-and-cultural-impact)
