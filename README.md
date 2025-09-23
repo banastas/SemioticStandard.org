@@ -4,8 +4,6 @@ Ron Cobb's iconic "Semiotic Standard" symbols for spacecraft, originally created
 
 <img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
 
-## Table of Contents
-
 - [About the Semiotic Standard](#about-the-semiotic-standard)
 - [History and Cultural Impact](#history-and-cultural-impact)
 - [Features](#features)
@@ -83,4 +81,4 @@ The Semiotic Standard symbols themselves are the intellectual property of Ron Co
 
 *This project is a tribute to Ron Cobb's visionary work and the lasting impact of the Semiotic Standard on science fiction design and visual communication.*
 
-**"The future is already here — it's just not evenly distributed."** - William Gibson
+**"The future is already here - it's just not evenly distributed."** - William Gibson
