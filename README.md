@@ -1,4 +1,11 @@
 # SemioticStandard.org
+
+[![Live Site](https://img.shields.io/badge/Live-SemioticStandard.org-00d9ff?style=for-the-badge)](https://semioticstandard.org)
+[![Built with HTML5](https://img.shields.io/badge/Built%20with-HTML5-e34f26?style=for-the-badge&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![Vanilla CSS](https://img.shields.io/badge/Vanilla-CSS-1572b6?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/banastas/SemioticStandard.org)
+[![Ron Cobb](https://img.shields.io/badge/Designer-Ron%20Cobb-ffd700?style=for-the-badge)](http://www.roncobb.net/)
+
 <img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
 
 Ron Cobb's iconic "Semiotic Standard" symbols for spacecraft, originally created for the 1979 science fiction film *Alien*.
@@ -49,6 +56,92 @@ The Semiotic Standard has had a profound impact on:
 - **User Interface Design**: Pioneering principles later adopted in real-world UI/UX design
 - **Visual Communication**: Establishing standards for iconography in technical environments
 - **Popular Culture**: Becoming instantly recognizable symbols of space exploration
+
+## Features
+
+This website provides:
+
+- **Interactive Symbol Gallery**: Browse all 30 symbols from the Semiotic Standard
+- **Detailed Documentation**: Learn about the history, purpose, and cultural impact of each symbol
+- **Responsive Design**: Optimized viewing experience across all devices
+- **Educational Resource**: Perfect for designers, science fiction enthusiasts, and design history students
+- **Vector Graphics**: High-quality SVG symbols for crisp rendering at any size
+
+## Installation
+
+This is a static website that can be run locally or deployed to any web server.
+
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/banastas/SemioticStandard.org.git
+   cd SemioticStandard.org
+   ```
+
+2. Open the site in your browser:
+   ```bash
+   open index.html
+   ```
+
+   Or serve it with a local server:
+   ```bash
+   python3 -m http.server 8000
+   # Visit http://localhost:8000
+   ```
+
+### Deployment
+
+Deploy to any static hosting service:
+- **GitHub Pages**: Already configured for deployment
+- **Netlify**: Drag and drop the project folder
+- **Vercel**: Connect your GitHub repository
+- **Any web server**: Upload all files to your web root
+
+## Usage
+
+Visit [SemioticStandard.org](https://semioticstandard.org) to:
+
+1. Explore the complete set of 30 standardized spacecraft symbols
+2. Learn about Ron Cobb's design philosophy and process
+3. Understand the historical context and cultural impact
+4. Access high-quality vector versions of each symbol
+5. Study the systematic approach to visual communication design
+
+## Technical Details
+
+### Technology Stack
+
+- **HTML5**: Semantic markup and modern web standards
+- **CSS3**: Custom styling with responsive design principles
+- **Vanilla JavaScript**: Lightweight interactivity without dependencies
+- **SVG Graphics**: Scalable vector graphics for symbol display
+
+### Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+### Performance
+
+- Zero external dependencies
+- Fast load times with optimized assets
+- Mobile-first responsive design
+- Accessible to screen readers and assistive technologies
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve the documentation, fix bugs, or add features:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/improvement`)
+5. Open a Pull Request
+
+Please ensure your contributions respect the educational and historical preservation nature of this project.
 
 ## License
 
