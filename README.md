@@ -3,7 +3,6 @@
 [![Live Site](https://img.shields.io/badge/Live-SemioticStandard.org-00d9ff?style=for-the-badge)](https://semioticstandard.org)
 [![Built with HTML5](https://img.shields.io/badge/Built%20with-HTML5-e34f26?style=for-the-badge&logo=html5)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Vanilla CSS](https://img.shields.io/badge/Vanilla-CSS-1572b6?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/banastas/SemioticStandard.org)
 [![Ron Cobb](https://img.shields.io/badge/Designer-Ron%20Cobb-ffd700?style=for-the-badge)](http://www.roncobb.net/)
 
 <img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
