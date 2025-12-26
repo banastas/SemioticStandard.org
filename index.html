@@ -56,7 +56,11 @@ https://github.com/banastas/SemioticStandard.org
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-5C5ET6DMNM');
+  gtag('config', 'G-5C5ET6DMNM', {
+    send_page_view: true,
+    allow_google_signals: true,
+    allow_ad_personalization_signals: true
+  });
 </script>
 </head>
 <body>
