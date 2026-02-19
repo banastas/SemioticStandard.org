@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function formatSymbolName(symbolData) {
         let formatted = symbolData.replace(/^\d+[A-C]?\./, '');
         formatted = formatted.replace(/\./g, ' ');
-        formatted = formatted.replace(/\(([^)]+)\)/g, '($1)');
         return formatted.trim();
     }
 
@@ -56,5 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     adjustGridLayout();
-    window.addEventListener('resize', adjustGridLayout);
+
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(adjustGridLayout, 100);
+    });
 });

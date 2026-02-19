@@ -7,26 +7,24 @@ body { background-color: #000; color: #fff; font-family: 'Courier New', Monaco, 
 .symbol-item:hover img { opacity: 0.7; }
 .credit-card { background-color: #222; border: 1px solid #444; display: flex; align-items: center; justify-content: center; grid-column: span 2; padding: 20px; transition: all 0.3s ease; }
 .credit-card:hover { background-color: #333; border-color: #666; }
-.credit-text { text-align: center; color: #fff; font-family: 'Courier New', Monaco, 'Roboto Mono', monospace; line-height: 1.4; }
+.credit-text { text-align: center; color: #fff; line-height: 1.4; }
 .credit-text .title { font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
 .credit-text .author { font-size: 1.1rem; font-weight: bold; margin-bottom: 8px; color: #ccc; }
 .credit-text .date { font-size: 0.9rem; color: #999; font-style: italic; }
 .symbol-label { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px 40px; font-size: 2.5rem; font-weight: bold; text-align: center; letter-spacing: 2px; border: 2px solid #666; border-radius: 4px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 1000; max-width: 80vw; word-wrap: break-word; text-transform: uppercase; }
 .symbol-label.active { opacity: 1; }
 @media (max-width: 768px) {
-.grid-container { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1px; padding: 1px; }
+.grid-container { gap: 1px; padding: 1px; }
 .symbol-label { font-size: 1.8rem; padding: 15px 30px; max-width: 90vw; }
 .credit-card { padding: 15px; }
 .credit-text .title { font-size: 0.7rem; margin-bottom: 10px; }
 .credit-text .author { font-size: 0.9rem; margin-bottom: 5px; }
 .credit-text .date { font-size: 0.7rem; } }
 @media (max-width: 480px) {
-.grid-container { grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); }
 .symbol-label { font-size: 1.4rem; padding: 10px 20px; letter-spacing: 1px; }
 .credit-card { padding: 10px; }
 .credit-text .title { font-size: 0.6rem; margin-bottom: 8px; line-height: 1.2; }
 .credit-text .author { font-size: 0.8rem; margin-bottom: 4px; }
 .credit-text .date { font-size: 0.6rem; } }
-@media (min-width: 1920px) { .grid-container { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 3px; padding: 3px; } .symbol-label { font-size: 3rem; padding: 25px 50px; } }
-@media (orientation: portrait) and (max-width: 768px) { .grid-container { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); } }
+@media (min-width: 1920px) { .grid-container { gap: 3px; padding: 3px; } .symbol-label { font-size: 3rem; padding: 25px 50px; } }
 @media (orientation: landscape) and (max-height: 600px) { .symbol-label { font-size: 2rem; padding: 15px 30px; } }
