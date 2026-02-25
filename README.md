@@ -5,15 +5,15 @@
 [![Vanilla CSS](https://img.shields.io/badge/Vanilla-CSS-1572b6?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Ron Cobb](https://img.shields.io/badge/Designer-Ron%20Cobb-ffd700?style=for-the-badge)](http://www.roncobb.net/)
 
-<img src="http://semioticstandard.org/assets/images/SemioticStandard.png">
+<img src="https://semioticstandard.org/assets/images/SemioticStandard.png">
 
-Ron Cobb's iconic "Semiotic Standard" symbols for spacecraft, originally created for the 1979 science fiction film *Alien*.
+A minimalist, interactive gallery of Ron Cobb's iconic "Semiotic Standard" symbols — the standardized spacecraft iconography originally designed in 1978 for the science fiction film *Alien* (1979).
 
 - [About the Semiotic Standard](#about-the-semiotic-standard)
-- [History and Cultural Impact](#history-and-cultural-impact)
 - [Features](#features)
+- [Symbols](#symbols)
+- [History and Cultural Impact](#history-and-cultural-impact)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Technical Details](#technical-details)
 - [Contributing](#contributing)
 - [License](#license)
@@ -23,16 +23,38 @@ Ron Cobb's iconic "Semiotic Standard" symbols for spacecraft, originally created
 
 The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft" is a comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978. These symbols were created to provide a realistic, functional visual language for spacecraft interiors, representing various systems, hazards, and areas that would be found on commercial space vessels.
 
-### Symbol Categories
+This site serves as an educational and historical preservation resource, presenting all 34 symbols (30 base symbols plus 4 directional and type variants) in a museum-like interactive gallery.
 
-The standard includes symbols for:
+## Features
 
-- **Environmental Systems**: Pressurized areas, artificial gravity, airlocks
-- **Safety & Hazards**: Radiation warnings, pressure suit requirements
-- **Life Support**: Life support systems, galleys, medical facilities
-- **Navigation & Communication**: Direction indicators, intercoms, computer terminals
-- **Storage & Maintenance**: Storage areas, maintenance zones, ladderways
-- **Specialized Equipment**: Lasers, photonic systems, refrigeration units
+- **Interactive Symbol Gallery** — Hover over any symbol to see its name displayed in a centered overlay label
+- **Adaptive Grid Layout** — Viewport-aware algorithm dynamically calculates optimal columns and rows based on screen aspect ratio
+- **High-Quality SVG Graphics** — Crisp vector symbols that render perfectly at any resolution
+- **Fully Responsive** — 5 breakpoints covering mobile, tablet, desktop, ultrawide, and landscape orientations
+- **Zero Dependencies** — Pure HTML, CSS, and vanilla JavaScript with no frameworks, libraries, or build tools
+- **Minimal Design** — Black background, monospace typography, no distractions from the symbols themselves
+
+## Symbols
+
+The gallery displays 34 symbols across these categories:
+
+### Environmental Systems
+Pressurised Area, Pressurised with Artificial Gravity, Artificial Gravity Absent, Airlock, Bulkhead Door, Non-Pressurised Area Beyond, Artificial Gravity Area Non-Pressurised Suit Required
+
+### Safety & Hazards
+Pressure Suit Locker, Hazard Warning, No Pressure Gravity Suit Required, Radiation Hazard, High Radioactivity
+
+### Technical Systems
+Photonic System (Fibre Optics), Laser, Astronic System (Electronics), Exhaust, Area Shielded from Radiation
+
+### Life Support & Facilities
+Cryogenic Vault, Refrigeration, Life Support System, Galley, Coffee, Autodoc
+
+### Navigation & Communication
+Direction (Up, Down, Right, Left), Bridge, Intercom, Computer Terminal
+
+### Storage & Maintenance
+Maintenance, Ladderway, Storage Non-Organic, Storage Organic (Foodstuffs)
 
 ## History and Cultural Impact
 
@@ -50,89 +72,59 @@ Cobb's approach was revolutionary for its time:
 
 ### Cultural Legacy
 
-The Semiotic Standard has had a profound impact on:
-- **Science Fiction Design**: Influencing countless films, games, and literature
-- **User Interface Design**: Pioneering principles later adopted in real-world UI/UX design
-- **Visual Communication**: Establishing standards for iconography in technical environments
-- **Popular Culture**: Becoming instantly recognizable symbols of space exploration
-
-## Features
-
-This website provides:
-
-- **Interactive Symbol Gallery**: Browse all 30 symbols from the Semiotic Standard
-- **Detailed Documentation**: Learn about the history, purpose, and cultural impact of each symbol
-- **Responsive Design**: Optimized viewing experience across all devices
-- **Educational Resource**: Perfect for designers, science fiction enthusiasts, and design history students
-- **Vector Graphics**: High-quality SVG symbols for crisp rendering at any size
+The Semiotic Standard has had a lasting impact on science fiction design, user interface design, visual communication standards, and popular culture — becoming instantly recognizable symbols of space exploration.
 
 ## Installation
 
-This is a static website that can be run locally or deployed to any web server.
+This is a static website. No build step, no dependencies, no configuration.
 
 ### Local Development
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/banastas/SemioticStandard.org.git
-   cd SemioticStandard.org
-   ```
+```bash
+git clone https://github.com/banastas/SemioticStandard.org.git
+cd SemioticStandard.org
 
-2. Open the site in your browser:
-   ```bash
-   open index.html
-   ```
+# Open directly
+open index.html
 
-   Or serve it with a local server:
-   ```bash
-   python3 -m http.server 8000
-   # Visit http://localhost:8000
-   ```
+# Or serve locally
+python3 -m http.server 8000
+# Visit http://localhost:8000
+```
 
 ### Deployment
 
-Deploy to any static hosting service:
-- **GitHub Pages**: Already configured for deployment
-- **Netlify**: Drag and drop the project folder
-- **Vercel**: Connect your GitHub repository
-- **Any web server**: Upload all files to your web root
-
-## Usage
-
-Visit [SemioticStandard.org](https://semioticstandard.org) to:
-
-1. Explore the complete set of 30 standardized spacecraft symbols
-2. Learn about Ron Cobb's design philosophy and process
-3. Understand the historical context and cultural impact
-4. Access high-quality vector versions of each symbol
-5. Study the systematic approach to visual communication design
+Upload all files to any static hosting service — GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any web server. No environment variables or build process required.
 
 ## Technical Details
 
-### Technology Stack
+### Stack
 
-- **HTML5**: Semantic markup and modern web standards
-- **CSS3**: Custom styling with responsive design principles
-- **Vanilla JavaScript**: Lightweight interactivity without dependencies
-- **SVG Graphics**: Scalable vector graphics for symbol display
+- **HTML5** — Single-page, 109 lines
+- **CSS3** — 30 lines, responsive grid with 5 breakpoints
+- **Vanilla JavaScript** — 64 lines, dynamic grid algorithm with debounced resize
+- **SVG** — 35 vector image files
+
+### How the Grid Works
+
+The JavaScript calculates optimal grid dimensions based on viewport aspect ratio:
+- **Landscape** (aspect ratio > 1.5): Favors more columns
+- **Portrait** (aspect ratio < 0.8): Favors more rows
+- **Balanced**: Square root distribution
+
+Symbol sizes are clamped between 60px and 200px. The grid recalculates on window resize with a 100ms debounce.
+
+### How Hover Labels Work
+
+On `mouseenter`, the `data-symbol` attribute (e.g., `001.PRESSURISED.AREA`) is parsed — the numeric prefix is stripped, dots become spaces, and the formatted name is displayed in a fixed centered overlay that fades in/out with CSS transitions.
 
 ### Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-### Performance
-
-- Zero external dependencies
-- Fast load times with optimized assets
-- Mobile-first responsive design
-- Accessible to screen readers and assistive technologies
+All modern browsers — Chrome, Firefox, Safari, Edge (desktop and mobile).
 
 ## Contributing
 
-Contributions are welcome! If you'd like to improve the documentation, fix bugs, or add features:
+Contributions are welcome. Please respect the educational and historical preservation nature of this project.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/improvement`)
@@ -140,36 +132,23 @@ Contributions are welcome! If you'd like to improve the documentation, fix bugs,
 4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
 
-Please ensure your contributions respect the educational and historical preservation nature of this project.
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License — see the [LICENSE](LICENSE) file for details.
 
 The Semiotic Standard symbols themselves are the intellectual property of Ron Cobb and are used here for educational and historical preservation purposes.
 
 ## Acknowledgments
 
-### Primary Credits
-- **Ron Cobb (1937-2020)**: The visionary artist and designer who created the Semiotic Standard
-- **Ridley Scott**: Director of *Alien* (1979), who brought the symbols to life on screen
-- **20th Century Fox**: For their support of innovative design in science fiction
+- **Ron Cobb (1937–2020)** — Creator of the Semiotic Standard
+- **Ridley Scott** — Director of *Alien* (1979)
+- **[@louh](https://github.com/louh)** — [semiotic-standard](https://github.com/louh/semiotic-standard) vector symbols
+- **H.R. Giger, Dan O'Bannon**, and the *Alien* production team
 
-### Historical Context
-- **H.R. Giger**: Swiss artist who collaborated with Cobb on *Alien*'s visual design
-- **Dan O'Bannon**: Screenwriter who worked with Cobb on the film's technical aspects
-- **The *Alien* Production Team**: For integrating the Semiotic Standard into the film's universe
-
-### Educational Resources
+### Resources
 - [Ron Cobb's Official Website](http://www.roncobb.net/)
-- [*Alien* (1979) - IMDb](https://www.imdb.com/title/tt0078748/)
-- [Science Fiction Design History](https://en.wikipedia.org/wiki/Science_fiction_film)
-
-### Vector Symbols
-- <a href="https://github.com/louh/semiotic-standard">semiotic-standard</a> by <a href="https://github.com/louh">@louh</a>
+- [*Alien* (1979) on IMDb](https://www.imdb.com/title/tt0078748/)
 
 ---
 
-*This project is a tribute to Ron Cobb's visionary work and the lasting impact of the Semiotic Standard on science fiction design and visual communication.*
-
-**"The future is already here - it's just not evenly distributed."** - William Gibson
+*A tribute to Ron Cobb's visionary work and the lasting impact of the Semiotic Standard on science fiction design and visual communication.*
