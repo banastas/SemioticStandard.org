@@ -8,35 +8,52 @@ document.addEventListener('DOMContentLoaded', function() {
         return formatted.trim();
     }
 
+    let activeItem = null;
+    let lastTouchTime = 0;
+
     function showLabel(item) {
+        activeItem = item;
         const symbolData = item.getAttribute('data-symbol');
-        const formattedName = formatSymbolName(symbolData);
-        symbolLabel.textContent = formattedName;
+        symbolLabel.textContent = formatSymbolName(symbolData);
         symbolLabel.classList.add('active');
     }
 
     function hideLabel() {
+        activeItem = null;
         symbolLabel.classList.remove('active');
     }
+
+    function recentTouch() {
+        return Date.now() - lastTouchTime < 500;
+    }
+
+    document.addEventListener('touchstart', function() {
+        lastTouchTime = Date.now();
+    }, { passive: true });
 
     symbolItems.forEach(item => {
         item.setAttribute('tabindex', '0');
         item.setAttribute('role', 'button');
 
         item.addEventListener('mouseenter', function() {
-            showLabel(this);
+            if (!recentTouch()) showLabel(this);
         });
 
-        item.addEventListener('mouseleave', hideLabel);
+        item.addEventListener('mouseleave', function() {
+            if (!recentTouch()) hideLabel();
+        });
 
         item.addEventListener('focus', function() {
-            showLabel(this);
+            if (!recentTouch()) showLabel(this);
         });
 
-        item.addEventListener('blur', hideLabel);
+        item.addEventListener('blur', function() {
+            if (!recentTouch()) hideLabel();
+        });
 
-        item.addEventListener('click', function(e) {
-            if (symbolLabel.classList.contains('active') && symbolLabel.textContent === formatSymbolName(this.getAttribute('data-symbol'))) {
+        item.addEventListener('touchend', function(e) {
+            e.preventDefault(); // Prevent emulated mouse events
+            if (activeItem === this) {
                 hideLabel();
             } else {
                 showLabel(this);
@@ -45,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Dismiss label on tap outside (mobile)
-    document.addEventListener('click', function(e) {
+    document.addEventListener('touchend', function(e) {
         if (!e.target.closest('.symbol-item')) {
             hideLabel();
         }
