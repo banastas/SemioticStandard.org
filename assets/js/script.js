@@ -8,17 +8,47 @@ document.addEventListener('DOMContentLoaded', function() {
         return formatted.trim();
     }
 
+    function showLabel(item) {
+        const symbolData = item.getAttribute('data-symbol');
+        const formattedName = formatSymbolName(symbolData);
+        symbolLabel.textContent = formattedName;
+        symbolLabel.classList.add('active');
+    }
+
+    function hideLabel() {
+        symbolLabel.classList.remove('active');
+    }
+
     symbolItems.forEach(item => {
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'button');
+
         item.addEventListener('mouseenter', function() {
-            const symbolData = this.getAttribute('data-symbol');
-            const formattedName = formatSymbolName(symbolData);
-            symbolLabel.textContent = formattedName;
-            symbolLabel.classList.add('active');
+            showLabel(this);
         });
 
-        item.addEventListener('mouseleave', function() {
-            symbolLabel.classList.remove('active');
+        item.addEventListener('mouseleave', hideLabel);
+
+        item.addEventListener('focus', function() {
+            showLabel(this);
         });
+
+        item.addEventListener('blur', hideLabel);
+
+        item.addEventListener('click', function(e) {
+            if (symbolLabel.classList.contains('active') && symbolLabel.textContent === formatSymbolName(this.getAttribute('data-symbol'))) {
+                hideLabel();
+            } else {
+                showLabel(this);
+            }
+        });
+    });
+
+    // Dismiss label on tap outside (mobile)
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.symbol-item')) {
+            hideLabel();
+        }
     });
 
     symbolLabel.addEventListener('transitionend', function() {
@@ -29,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function adjustGridLayout() {
         const container = document.querySelector('.grid-container');
-        const items = container.children;
-        const itemCount = items.length;
+        const itemCount = symbolItems.length + 1; // +1 for credit card
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         const aspectRatio = viewportWidth / viewportHeight;
