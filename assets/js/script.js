@@ -1,5 +1,4 @@
-// SemioticStandard.org — hover/focus/touch label interaction only.
-// Grid sizing is pure CSS (no resize listener, no recalculation).
+// SemioticStandard.org — grid layout + label interaction.
 
 (function () {
   'use strict';
@@ -9,6 +8,9 @@
   if (!symbolLabel || symbolItems.length === 0) return;
 
   const TOUCH_WINDOW_MS = 500;
+  const CREDIT_SPAN = 2;
+  const CELL_COUNT = symbolItems.length + CREDIT_SPAN; // 34 symbols + credit card (spans 2)
+
   let activeItem = null;
   let lastTouchTime = 0;
 
@@ -33,6 +35,34 @@
   function recentTouch() {
     return Date.now() - lastTouchTime < TOUCH_WINDOW_MS;
   }
+
+  // --- Layout: compute cols × rows from viewport aspect so the grid fills 100svh. ---
+
+  function computeLayout() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const aspect = w / h;
+
+    let cols;
+    if (aspect > 1.5)       cols = Math.ceil(Math.sqrt(CELL_COUNT * aspect));
+    else if (aspect < 0.8)  cols = Math.ceil(Math.sqrt(CELL_COUNT / (h / w)));
+    else                    cols = Math.ceil(Math.sqrt(CELL_COUNT));
+
+    const rows = Math.ceil(CELL_COUNT / cols);
+    const root = document.documentElement;
+    root.style.setProperty('--cols', cols);
+    root.style.setProperty('--rows', rows);
+  }
+
+  computeLayout();
+
+  let resizeRaf = 0;
+  window.addEventListener('resize', () => {
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(computeLayout);
+  });
+
+  // --- Interaction ---
 
   document.addEventListener('touchstart', () => {
     lastTouchTime = Date.now();

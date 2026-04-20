@@ -48,13 +48,14 @@ body {
 }
 .skip-link:focus { left: 8px; top: 8px; outline: 2px solid #000; }
 
-/* Grid — pure CSS.
-   Default (narrow / portrait viewports): content-height grid with square tiles; scrolls.
-   Landscape override below uses 100svh-locked rows that stretch to fill. */
+/* Grid — cols/rows are set as CSS variables by script.js based on the viewport.
+   Grid fills exactly 100svh with tracks stretched evenly — the museum-grid look. */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--tile-size), 1fr));
+  grid-template-columns: repeat(var(--cols, 6), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows, 6), minmax(0, 1fr));
   gap: var(--gap);
+  height: 100svh;
   min-height: 100svh;
   width: 100%;
   background-color: var(--bg);
@@ -67,24 +68,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
   min-width: 0;
+  min-height: 0;
   transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
-
-/* Landscape / wide viewports: lock grid to viewport height and stretch rows. */
-@media (min-aspect-ratio: 5/4) {
-  .grid-container {
-    height: 100svh;
-    grid-auto-rows: minmax(0, 1fr);
-  }
-  .symbol-item {
-    aspect-ratio: auto;
-    height: 100%;
-  }
 }
 
 .symbol-item:hover {
