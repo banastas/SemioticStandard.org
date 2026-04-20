@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-An elegant, minimalist website showcasing Ron Cobb's iconic "Semiotic Standard" symbols from the 1979 science fiction film *Alien*. The site presents all 30 standardized spacecraft symbols in an interactive grid with hover effects and responsive design.
+An elegant, minimalist website showcasing Ron Cobb's iconic "Semiotic Standard" symbols from the 1979 science fiction film *Alien*. The site presents all 34 standardized spacecraft symbols (30 base + 4 directional/type variants) in a pure-CSS responsive grid with hover/focus/touch labels and full keyboard support.
 
 **Live Site:** https://semioticstandard.org
 
@@ -10,14 +10,15 @@ An elegant, minimalist website showcasing Ron Cobb's iconic "Semiotic Standard" 
 Educational and historical preservation of Ron Cobb's visionary 1978 design work. The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft" represents a comprehensive visual language for spacecraft interiors, demonstrating pioneering principles in universal design and visual communication.
 
 ### Key Features
-- **Interactive Symbol Gallery** - Browse all 30 symbols with hover labels
-- **Responsive Grid Layout** - Adapts to any screen size with dynamic grid calculations
-- **High-Quality SVG Graphics** - Crisp vector symbols at any resolution
-- **Zero Dependencies** - Pure HTML, CSS, and vanilla JavaScript
-- **Minimal Design** - Black background with monospace typography, focusing attention on symbols
-- **Mobile-Optimized** - Touch-friendly with responsive typography
-- **Fast Loading** - Static site with optimized assets
-- **Educational Resource** - Perfect for designers, sci-fi enthusiasts, design history students
+- **Interactive Symbol Gallery** — Browse all 34 symbols with hover/focus/touch labels
+- **Pure CSS Responsive Grid** — `clamp()` + `auto-fit`, zero layout JS
+- **Accessible** — Skip link, ARIA labels, Enter/Space/Escape keyboard, `prefers-reduced-motion`
+- **SEO-Ready** — JSON-LD structured data, canonical URL, sitemap.xml, robots.txt
+- **High-Quality SVG Graphics** — 34 SVGO-optimized vector symbols
+- **Zero Dependencies** — Pure HTML, CSS, and vanilla JavaScript
+- **Minimal Design** — Black background with monospace typography
+- **Mobile-Optimized** — Touch-friendly with responsive typography
+- **Fast Loading** — Deferred analytics (`requestIdleCallback`), lazy images, immutable asset caching
 
 ### Design Philosophy
 Minimalist, museum-like presentation:
@@ -31,7 +32,7 @@ Minimalist, museum-like presentation:
 ## Tech Stack
 
 - **Core:** Pure HTML5, CSS3, Vanilla JavaScript
-- **Graphics:** SVG vector images (35 files)
+- **Graphics:** 34 SVG vector symbols + 1 PNG OG preview (SVGO-optimized)
 - **Typography:** Courier New, Monaco, Roboto Mono (monospace stack)
 - **Analytics:** Google Analytics 4 (G-5C5ET6DMNM)
 - **Hosting:** Static hosting (any CDN/web server)

@@ -17,6 +17,9 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+
+# Claude Code local config (launch.json is dev-only)
+.claude/
 *.suo
 *.ntvs*
 *.njsproj

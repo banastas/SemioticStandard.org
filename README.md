@@ -21,17 +21,19 @@ A minimalist, interactive gallery of Ron Cobb's iconic "Semiotic Standard" symbo
 
 ## About the Semiotic Standard
 
-The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft" is a comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978. These symbols were created to provide a realistic, functional visual language for spacecraft interiors, representing various systems, hazards, and areas that would be found on commercial space vessels.
+The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft" is a comprehensive set of standardized symbols designed by Ron Cobb in 1978. These symbols were created to provide a realistic, functional visual language for spacecraft interiors, representing various systems, hazards, and areas that would be found on commercial space vessels.
 
 This site serves as an educational and historical preservation resource, presenting all 34 symbols (30 base symbols plus 4 directional and type variants) in a museum-like interactive gallery.
 
 ## Features
 
-- **Interactive Symbol Gallery** — Hover over any symbol to see its name displayed in a centered overlay label
-- **Adaptive Grid Layout** — Viewport-aware algorithm dynamically calculates optimal columns and rows based on screen aspect ratio
-- **High-Quality SVG Graphics** — Crisp vector symbols that render perfectly at any resolution
-- **Fully Responsive** — 5 breakpoints covering mobile, tablet, desktop, ultrawide, and landscape orientations
+- **Interactive Symbol Gallery** — Hover, focus, or tap any symbol to see its name in a centered overlay label
+- **Pure CSS Responsive Grid** — `clamp()` + `auto-fit` scales symbols from phone to ultrawide with zero layout JavaScript
+- **Optimized SVG Graphics** — All 34 symbols SVGO-minified; crisp at any resolution
+- **Accessible by Default** — Skip link, ARIA labels, keyboard activation (Enter/Space), `prefers-reduced-motion` respected
+- **SEO-Ready** — JSON-LD structured data (`CreativeWork` / `WebSite`), canonical URL, sitemap, robots.txt
 - **Zero Dependencies** — Pure HTML, CSS, and vanilla JavaScript with no frameworks, libraries, or build tools
+- **Deferred Analytics** — GA loads during idle time so it never blocks first paint
 - **Minimal Design** — Black background, monospace typography, no distractions from the symbols themselves
 
 ## Symbols
@@ -100,23 +102,31 @@ Upload all files to any static hosting service — GitHub Pages, Netlify, Vercel
 
 ### Stack
 
-- **HTML5** — Single-page, 109 lines
-- **CSS3** — 30 lines, responsive grid with 5 breakpoints
-- **Vanilla JavaScript** — 64 lines, dynamic grid algorithm with debounced resize
-- **SVG** — 35 vector image files
+- **HTML5** — Single page with JSON-LD structured data
+- **CSS3** — CSS variables, `clamp()`-based responsive tile sizing, `prefers-reduced-motion` support
+- **Vanilla JavaScript** — Label interaction only (hover, focus, keyboard, touch); no resize handlers
+- **SVG** — 34 vector symbols (SVGO-optimized)
 
 ### How the Grid Works
 
-The JavaScript calculates optimal grid dimensions based on viewport aspect ratio:
-- **Landscape** (aspect ratio > 1.5): Favors more columns
-- **Portrait** (aspect ratio < 0.8): Favors more rows
-- **Balanced**: Square root distribution
+The grid is pure CSS — no JavaScript sizing:
 
-Symbol sizes are clamped between 60px and 200px. The grid recalculates on window resize with a 100ms debounce.
+```css
+grid-template-columns: repeat(auto-fit, minmax(clamp(60px, 12vmin, 200px), 1fr));
+```
+
+Breakpoints at `768px`, `480px`, and `1920px` tune the `--tile-size` variable for different viewports. Landscape phones get a dedicated height rule.
 
 ### How Hover Labels Work
 
-On `mouseenter`, the `data-symbol` attribute (e.g., `001.PRESSURISED.AREA`) is parsed — the numeric prefix is stripped, dots become spaces, and the formatted name is displayed in a fixed centered overlay that fades in/out with CSS transitions.
+On `mouseenter`, `focus`, keyboard activation (Enter/Space), or `touchend`, the `data-symbol` attribute (e.g. `001.PRESSURISED.AREA`) is parsed — the numeric prefix is stripped, dots become spaces — and the formatted name is displayed in a fixed centered overlay that fades in/out with a CSS transition. Escape dismisses the label. The label is an `aria-live="polite"` region so screen readers announce each symbol.
+
+### Performance
+
+- Google Analytics is loaded via `requestIdleCallback` (with a `load + 1.5s` fallback), so it never blocks first paint.
+- All images use `loading="lazy"` and `decoding="async"` with explicit `width`/`height` to eliminate layout shift.
+- `/_headers` sets 1-year immutable caching on `/assets/*` when deployed to Cloudflare Pages or Netlify.
+- SVGO-optimized symbols (~41% smaller than source).
 
 ### Browser Support
 

@@ -1,110 +1,83 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const symbolItems = document.querySelectorAll('.symbol-item');
-    const symbolLabel = document.getElementById('symbolLabel');
+// SemioticStandard.org — hover/focus/touch label interaction only.
+// Grid sizing is pure CSS (no resize listener, no recalculation).
 
-    function formatSymbolName(symbolData) {
-        let formatted = symbolData.replace(/^\d+[A-C]?\./, '');
-        formatted = formatted.replace(/\./g, ' ');
-        return formatted.trim();
-    }
+(function () {
+  'use strict';
 
-    let activeItem = null;
-    let lastTouchTime = 0;
+  const symbolItems = document.querySelectorAll('.symbol-item');
+  const symbolLabel = document.getElementById('symbolLabel');
+  if (!symbolLabel || symbolItems.length === 0) return;
 
-    function showLabel(item) {
-        activeItem = item;
-        const symbolData = item.getAttribute('data-symbol');
-        symbolLabel.textContent = formatSymbolName(symbolData);
-        symbolLabel.classList.add('active');
-    }
+  const TOUCH_WINDOW_MS = 500;
+  let activeItem = null;
+  let lastTouchTime = 0;
 
-    function hideLabel() {
-        activeItem = null;
-        symbolLabel.classList.remove('active');
-    }
+  function formatSymbolName(symbolData) {
+    return symbolData
+      .replace(/^\d+[A-C]?\./, '')
+      .replace(/\./g, ' ')
+      .trim();
+  }
 
-    function recentTouch() {
-        return Date.now() - lastTouchTime < 500;
-    }
+  function showLabel(item) {
+    activeItem = item;
+    symbolLabel.textContent = formatSymbolName(item.getAttribute('data-symbol') || '');
+    symbolLabel.classList.add('active');
+  }
 
-    document.addEventListener('touchstart', function() {
-        lastTouchTime = Date.now();
-    }, { passive: true });
+  function hideLabel() {
+    activeItem = null;
+    symbolLabel.classList.remove('active');
+  }
 
-    symbolItems.forEach(item => {
-        item.setAttribute('tabindex', '0');
-        item.setAttribute('role', 'button');
+  function recentTouch() {
+    return Date.now() - lastTouchTime < TOUCH_WINDOW_MS;
+  }
 
-        item.addEventListener('mouseenter', function() {
-            if (!recentTouch()) showLabel(this);
-        });
+  document.addEventListener('touchstart', () => {
+    lastTouchTime = Date.now();
+  }, { passive: true });
 
-        item.addEventListener('mouseleave', function() {
-            if (!recentTouch()) hideLabel();
-        });
-
-        item.addEventListener('focus', function() {
-            if (!recentTouch()) showLabel(this);
-        });
-
-        item.addEventListener('blur', function() {
-            if (!recentTouch()) hideLabel();
-        });
-
-        item.addEventListener('touchend', function(e) {
-            e.preventDefault(); // Prevent emulated mouse events
-            if (activeItem === this) {
-                hideLabel();
-            } else {
-                showLabel(this);
-            }
-        });
+  symbolItems.forEach((item) => {
+    item.addEventListener('mouseenter', function () {
+      if (!recentTouch()) showLabel(this);
     });
 
-    // Dismiss label on tap outside (mobile)
-    document.addEventListener('touchend', function(e) {
-        if (!e.target.closest('.symbol-item')) {
-            hideLabel();
-        }
+    item.addEventListener('mouseleave', function () {
+      if (!recentTouch()) hideLabel();
     });
 
-    symbolLabel.addEventListener('transitionend', function() {
-        if (!this.classList.contains('active')) {
-            this.textContent = '';
-        }
+    item.addEventListener('focus', function () {
+      if (!recentTouch()) showLabel(this);
     });
 
-    function adjustGridLayout() {
-        const container = document.querySelector('.grid-container');
-        const itemCount = symbolItems.length + 1; // +1 for credit card
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const aspectRatio = viewportWidth / viewportHeight;
-
-        let cols, rows;
-
-        if (aspectRatio > 1.5) {
-            cols = Math.ceil(Math.sqrt(itemCount * aspectRatio));
-            rows = Math.ceil(itemCount / cols);
-        } else if (aspectRatio < 0.8) {
-            rows = Math.ceil(Math.sqrt(itemCount / aspectRatio));
-            cols = Math.ceil(itemCount / rows);
-        } else {
-            cols = Math.ceil(Math.sqrt(itemCount));
-            rows = Math.ceil(itemCount / cols);
-        }
-
-        const minSize = Math.min(viewportWidth / cols, viewportHeight / rows) - 4;
-        const finalMinSize = Math.max(60, Math.min(200, minSize));
-
-        container.style.gridTemplateColumns = `repeat(auto-fit, minmax(${finalMinSize}px, 1fr))`;
-    }
-
-    adjustGridLayout();
-
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(adjustGridLayout, 100);
+    item.addEventListener('blur', function () {
+      if (!recentTouch()) hideLabel();
     });
-});
+
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (activeItem === this) hideLabel(); else showLabel(this);
+      } else if (e.key === 'Escape') {
+        hideLabel();
+        this.blur();
+      }
+    });
+
+    item.addEventListener('touchend', function (e) {
+      e.preventDefault(); // suppress emulated mouse events
+      if (activeItem === this) hideLabel(); else showLabel(this);
+    });
+  });
+
+  // Tap outside dismisses the label on mobile
+  document.addEventListener('touchend', (e) => {
+    if (!e.target.closest('.symbol-item')) hideLabel();
+  });
+
+  // Clear text after fade-out completes to keep a11y tree tidy
+  symbolLabel.addEventListener('transitionend', function () {
+    if (!this.classList.contains('active')) this.textContent = '';
+  });
+})();

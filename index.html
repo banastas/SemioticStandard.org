@@ -1,110 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--
- ░▒▓███████▓▒░▒▓████████▓▒░▒▓██████████████▓▒░░▒▓█▓▒░░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓██████▓▒░         
-░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░        
-░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░               
- ░▒▓██████▓▒░░▒▓██████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░               
-       ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░               
-       ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░        
-░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓██████▓▒░         
-                                                                                                         
-                                                                                                         
- ░▒▓███████▓▒░▒▓████████▓▒░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
-░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
- ░▒▓██████▓▒░   ░▒▓█▓▒░  ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
-       ░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-       ░▒▓█▓▒░  ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓███████▓▒░   ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░  
-                                                                                                         
-                                                                                                         
-The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft" is a comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978. These symbols were created to provide a realistic, functional visual language for spacecraft interiors, representing various systems, hazards, and areas that would be found on commercial space vessels.
+ ░▒▓███████▓▒░▒▓████████▓▒░▒▓██████████████▓▒░░▒▓█▓▒░░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓██████▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+ ░▒▓██████▓▒░░▒▓██████▓▒░ ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░
+░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓██████▓▒░
+
+ ░▒▓███████▓▒░▒▓████████▓▒░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░
+ ░▒▓██████▓▒░   ░▒▓█▓▒░  ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░
+░▒▓███████▓▒░   ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░
+
+The "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft"
+is a comprehensive set of standardized symbols designed by Ron Cobb in 1978. These symbols were created to
+provide a realistic, functional visual language for spacecraft interiors, representing various systems,
+hazards, and areas that would be found on commercial space vessels.
 
 https://github.com/banastas/SemioticStandard.org
 -->
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <title>Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft</title>
 
-<!-- Open Graph Meta Tags -->
+<link rel="canonical" href="https://semioticstandard.org/">
+<meta name="description" content="The complete set of 34 standardized spacecraft symbols designed by Ron Cobb in 1978 for the film Alien. An interactive visual reference for the Semiotic Standard.">
+<meta name="keywords" content="semiotic standard, spacecraft, symbols, Ron Cobb, Alien 1979, Nostromo, space design, iconography, visual language">
+<meta name="author" content="Ron Cobb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Open Graph -->
 <meta property="og:title" content="Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft">
-<meta property="og:description" content="A comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978 for spacecraft interiors, representing various systems, hazards, and areas found on commercial space vessels.">
-<meta property="og:image" content="https://SemioticStandard.org/assets/images/SemioticStandard.png">
-<meta property="og:url" content="https://SemioticStandard.org/">
+<meta property="og:description" content="The complete set of 34 standardized spacecraft symbols designed by Ron Cobb in 1978 for the film Alien.">
+<meta property="og:image" content="https://semioticstandard.org/assets/images/SemioticStandard.png">
+<meta property="og:image:alt" content="A grid of Ron Cobb's Semiotic Standard symbols on a black background.">
+<meta property="og:url" content="https://semioticstandard.org/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SemioticStandard.org">
 
-<!-- X Meta Tags -->
+<!-- X / Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft">
-<meta name="twitter:description" content="A comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978 for spacecraft interiors, representing various systems, hazards, and areas found on commercial space vessels.">
-<meta name="twitter:image" content="https://SemioticStandard.org/assets/images/SemioticStandard.png">
+<meta name="twitter:description" content="The complete set of 34 standardized spacecraft symbols designed by Ron Cobb in 1978 for the film Alien.">
+<meta name="twitter:image" content="https://semioticstandard.org/assets/images/SemioticStandard.png">
+<meta name="twitter:image:alt" content="A grid of Ron Cobb's Semiotic Standard symbols on a black background.">
 
-<!-- Additional Meta Tags -->
-<meta name="description" content="A comprehensive set of 30 standardized symbols designed by Ron Cobb in 1978 for spacecraft interiors, representing various systems, hazards, and areas found on commercial space vessels.">
-<meta name="keywords" content="semiotic standard, spacecraft, symbols, Ron Cobb, space design, commercial space, space symbols, space interior design">
-<meta name="author" content="Ron Cobb">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/css/style.css">
 
-<link rel="icon" href="data:," >
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5C5ET6DMNM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5C5ET6DMNM');
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://semioticstandard.org/#website",
+      "url": "https://semioticstandard.org/",
+      "name": "SemioticStandard.org",
+      "description": "Interactive reference for Ron Cobb's 1978 Semiotic Standard spacecraft symbols.",
+      "publisher": { "@id": "https://semioticstandard.org/#publisher" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://semioticstandard.org/#publisher",
+      "name": "Bill Anastas",
+      "url": "https://banast.as"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://semioticstandard.org/#work",
+      "name": "Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft",
+      "alternateName": "Semiotic Standard",
+      "creator": {
+        "@type": "Person",
+        "name": "Ron Cobb",
+        "birthDate": "1937",
+        "deathDate": "2020",
+        "sameAs": "https://en.wikipedia.org/wiki/Ron_Cobb"
+      },
+      "dateCreated": "1978",
+      "about": {
+        "@type": "Movie",
+        "name": "Alien",
+        "datePublished": "1979",
+        "director": { "@type": "Person", "name": "Ridley Scott" }
+      },
+      "description": "A comprehensive set of 34 standardized symbols designed to serve as a visual language for commercial spacecraft interiors in the 1979 film Alien.",
+      "image": "https://semioticstandard.org/assets/images/SemioticStandard.png",
+      "url": "https://semioticstandard.org/"
+    }
+  ]
+}
 </script>
 </head>
 <body>
-<div class="grid-container" id="symbolGrid"><div class="symbol-item" data-symbol="001.PRESSURISED.AREA"><img loading="lazy" src="assets/images/001.PRESSURISED.AREA.svg" alt="Pressurised Area"></div>
-<div class="symbol-item" data-symbol="002.PRESSURISED.WITH.ARTIFICIAL.GRAVITY"><img loading="lazy" src="assets/images/002.PRESSURISED.WITH.ARTIFICIAL.GRAVITY.svg" alt="Pressurised with Artificial Gravity"></div>
-<div class="symbol-item" data-symbol="003.ARTIFICIAL.GRAVITY.ABSENT"><img loading="lazy" src="assets/images/003.ARTIFICIAL.GRAVITY.ABSENT.svg" alt="Artificial Gravity Absent"></div>
-<div class="symbol-item" data-symbol="004.CRYOGENIC.VAULT"><img loading="lazy" src="assets/images/004.CRYOGENIC.VAULT.svg" alt="Cryogenic Vault"></div>
-<div class="symbol-item" data-symbol="005.AIRLOCK"><img loading="lazy" src="assets/images/005.AIRLOCK.svg" alt="Airlock"></div>
-<div class="symbol-item" data-symbol="006.BULKHEAD.DOOR"><img loading="lazy" src="assets/images/006.BULKHEAD.DOOR.svg" alt="Bulkhead Door"></div>
-<div class="symbol-item" data-symbol="007.NON-PRESSURISED.AREA.BEYOND"><img loading="lazy" src="assets/images/007.NON-PRESSURISED.AREA.BEYOND.svg" alt="Non-Pressurised Area Beyond"></div>
-<div class="symbol-item" data-symbol="008.PRESSURE.SUIT.LOCKER"><img loading="lazy" src="assets/images/008.PRESSURE.SUIT.LOCKER.svg" alt="Pressure Suit Locker"></div>
-<div class="symbol-item" data-symbol="009.PHOTONIC.SYSTEM.(FIBRE.OPTICS)"><img loading="lazy" src="assets/images/009.PHOTONIC.SYSTEM.(FIBRE.OPTICS).svg" alt="Photonic System (Fibre Optics)"></div>
-<div class="symbol-item" data-symbol="010.LASER"><img loading="lazy" src="assets/images/010.LASER.svg" alt="Laser"></div>
-<div class="symbol-item" data-symbol="011.ASTRONIC.SYSTEM.(ELECTRONICS)"><img loading="lazy" src="assets/images/011.ASTRONIC.SYSTEM.(ELECTRONICS).svg" alt="Astronic System (Electronics)"></div>
-<div class="symbol-item" data-symbol="012.HAZARD.WARNING"><img loading="lazy" src="assets/images/012.HAZARD.WARNING.svg" alt="Hazard Warning"></div>
-<div class="symbol-item" data-symbol="013.ARTIFICIAL.GRAVITY.AREA.NON-PRESSURISED.SUIT.REQUIRED"><img loading="lazy" src="assets/images/013.ARTIFICIAL.GRAVITY.AREA.NON-PRESSURISED.SUIT.REQUIRED.svg" alt="Artificial Gravity Area Non-Pressurised Suit Required"></div>
-<div class="symbol-item" data-symbol="014.NO.PRESSURE.GRAVITY.SUIT.REQUIRED"><img loading="lazy" src="assets/images/014.NO.PRESSURE.GRAVITY.SUIT.REQUIRED.svg" alt="No Pressure Gravity Suit Required"></div>
-<div class="symbol-item" data-symbol="015.EXHAUST"><img loading="lazy" src="assets/images/015.EXHAUST.svg" alt="Exhaust"></div>
-<div class="symbol-item" data-symbol="016.AREA.SHIELDED.FROM.RADIATION"><img loading="lazy" src="assets/images/016.AREA.SHIELDED.FROM.RADIATION.svg" alt="Area Shielded from Radiation"></div>
-<div class="symbol-item" data-symbol="017.RADIATION.HAZARD"><img loading="lazy" src="assets/images/017.RADIATION.HAZARD.svg" alt="Radiation Hazard"></div>
-<div class="symbol-item" data-symbol="018.HIGH.RADIOACTIVITY"><img loading="lazy" src="assets/images/018.HIGH.RADIOACTIVITY.svg" alt="High Radioactivity"></div>
-<div class="symbol-item" data-symbol="019.REFRIGERATION"><img loading="lazy" src="assets/images/019.REFRIGERATION.svg" alt="Refrigeration"></div>
-<div class="symbol-item" data-symbol="020.DIRECTION"><img loading="lazy" src="assets/images/020.DIRECTION.svg" alt="Direction"></div>
-<div class="symbol-item" data-symbol="020A.DIRECTION.DOWN"><img loading="lazy" src="assets/images/020A.DIRECTION.DOWN.svg" alt="Direction Down"></div>
-<div class="symbol-item" data-symbol="020B.DIRECTION.RIGHT"><img loading="lazy" src="assets/images/020B.DIRECTION.RIGHT.svg" alt="Direction Right"></div>
-<div class="symbol-item" data-symbol="020C.DIRECTION.LEFT"><img loading="lazy" src="assets/images/020C.DIRECTION.LEFT.svg" alt="Direction Left"></div>
-<div class="symbol-item" data-symbol="021.LIFE.SUPPORT.SYSTEM"><img loading="lazy" src="assets/images/021.LIFE.SUPPORT.SYSTEM.svg" alt="Life Support System"></div>
-<div class="symbol-item" data-symbol="022.GALLEY"><img loading="lazy" src="assets/images/022.GALLEY.svg" alt="Galley"></div>
-<div class="symbol-item" data-symbol="023.COFFEE"><img loading="lazy" src="assets/images/023.COFFEE.svg" alt="Coffee"></div>
-<div class="symbol-item" data-symbol="024.BRIDGE"><img loading="lazy" src="assets/images/024.BRIDGE.svg" alt="Bridge"></div>
-<div class="symbol-item" data-symbol="025.AUTODOC"><img loading="lazy" src="assets/images/025.AUTODOC.svg" alt="Autodoc"></div>
-<div class="symbol-item" data-symbol="026.MAINTENANCE"><img loading="lazy" src="assets/images/026.MAINTENANCE.svg" alt="Maintenance"></div>
-<div class="symbol-item" data-symbol="027.LADDERWAY"><img loading="lazy" src="assets/images/027.LADDERWAY.svg" alt="Ladderway"></div>
-<div class="symbol-item" data-symbol="028.INTERCOM"><img loading="lazy" src="assets/images/028.INTERCOM.svg" alt="Intercom"></div>
-<div class="symbol-item" data-symbol="029.STORAGE.NON-ORGANIC"><img loading="lazy" src="assets/images/029.STORAGE.NON-ORGANIC.svg" alt="Storage Non-Organic"></div>
-<div class="symbol-item" data-symbol="029A.STORAGE.ORGANIC.(FOODSTUFFS)"><img loading="lazy" src="assets/images/029A.STORAGE.ORGANIC.(FOODSTUFFS).svg" alt="Storage Organic (Foodstuffs)"></div>
-<div class="symbol-item" data-symbol="030.COMPUTER.TERMINAL"><img loading="lazy" src="assets/images/030.COMPUTER.TERMINAL.svg" alt="Computer Terminal"></div>
-<div class="credit-card">
-<div class="credit-text">
-<div class="title">Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft</div>
-<div class="author">Ron Cobb</div>
-<div class="date">April 16, 2078</div>
-</div>
-</div>
-</div>
-<div class="symbol-label" id="symbolLabel"></div>
-<script src="assets/js/script.js"></script>
+<a class="skip-link" href="#symbolGrid">Skip to symbols</a>
+
+<main id="main">
+  <h1 class="visually-hidden">Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft</h1>
+
+  <section class="grid-container" id="symbolGrid" aria-label="The 34 Semiotic Standard symbols">
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="001.PRESSURISED.AREA" aria-label="Pressurised Area"><img src="/assets/images/001.PRESSURISED.AREA.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="002.PRESSURISED.WITH.ARTIFICIAL.GRAVITY" aria-label="Pressurised with Artificial Gravity"><img src="/assets/images/002.PRESSURISED.WITH.ARTIFICIAL.GRAVITY.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="003.ARTIFICIAL.GRAVITY.ABSENT" aria-label="Artificial Gravity Absent"><img src="/assets/images/003.ARTIFICIAL.GRAVITY.ABSENT.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="004.CRYOGENIC.VAULT" aria-label="Cryogenic Vault"><img src="/assets/images/004.CRYOGENIC.VAULT.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="005.AIRLOCK" aria-label="Airlock"><img src="/assets/images/005.AIRLOCK.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="006.BULKHEAD.DOOR" aria-label="Bulkhead Door"><img src="/assets/images/006.BULKHEAD.DOOR.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="007.NON-PRESSURISED.AREA.BEYOND" aria-label="Non-Pressurised Area Beyond"><img src="/assets/images/007.NON-PRESSURISED.AREA.BEYOND.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="008.PRESSURE.SUIT.LOCKER" aria-label="Pressure Suit Locker"><img src="/assets/images/008.PRESSURE.SUIT.LOCKER.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="009.PHOTONIC.SYSTEM.(FIBRE.OPTICS)" aria-label="Photonic System (Fibre Optics)"><img src="/assets/images/009.PHOTONIC.SYSTEM.(FIBRE.OPTICS).svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="010.LASER" aria-label="Laser"><img src="/assets/images/010.LASER.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="011.ASTRONIC.SYSTEM.(ELECTRONICS)" aria-label="Astronic System (Electronics)"><img src="/assets/images/011.ASTRONIC.SYSTEM.(ELECTRONICS).svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="012.HAZARD.WARNING" aria-label="Hazard Warning"><img src="/assets/images/012.HAZARD.WARNING.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="013.ARTIFICIAL.GRAVITY.AREA.NON-PRESSURISED.SUIT.REQUIRED" aria-label="Artificial Gravity Area Non-Pressurised Suit Required"><img src="/assets/images/013.ARTIFICIAL.GRAVITY.AREA.NON-PRESSURISED.SUIT.REQUIRED.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="014.NO.PRESSURE.GRAVITY.SUIT.REQUIRED" aria-label="No Pressure Gravity Suit Required"><img src="/assets/images/014.NO.PRESSURE.GRAVITY.SUIT.REQUIRED.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="015.EXHAUST" aria-label="Exhaust"><img src="/assets/images/015.EXHAUST.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="016.AREA.SHIELDED.FROM.RADIATION" aria-label="Area Shielded from Radiation"><img src="/assets/images/016.AREA.SHIELDED.FROM.RADIATION.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="017.RADIATION.HAZARD" aria-label="Radiation Hazard"><img src="/assets/images/017.RADIATION.HAZARD.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="018.HIGH.RADIOACTIVITY" aria-label="High Radioactivity"><img src="/assets/images/018.HIGH.RADIOACTIVITY.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="019.REFRIGERATION" aria-label="Refrigeration"><img src="/assets/images/019.REFRIGERATION.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="020.DIRECTION" aria-label="Direction"><img src="/assets/images/020.DIRECTION.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="020A.DIRECTION.DOWN" aria-label="Direction Down"><img src="/assets/images/020A.DIRECTION.DOWN.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="020B.DIRECTION.RIGHT" aria-label="Direction Right"><img src="/assets/images/020B.DIRECTION.RIGHT.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="020C.DIRECTION.LEFT" aria-label="Direction Left"><img src="/assets/images/020C.DIRECTION.LEFT.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="021.LIFE.SUPPORT.SYSTEM" aria-label="Life Support System"><img src="/assets/images/021.LIFE.SUPPORT.SYSTEM.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="022.GALLEY" aria-label="Galley"><img src="/assets/images/022.GALLEY.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="023.COFFEE" aria-label="Coffee"><img src="/assets/images/023.COFFEE.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="024.BRIDGE" aria-label="Bridge"><img src="/assets/images/024.BRIDGE.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="025.AUTODOC" aria-label="Autodoc"><img src="/assets/images/025.AUTODOC.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="026.MAINTENANCE" aria-label="Maintenance"><img src="/assets/images/026.MAINTENANCE.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="027.LADDERWAY" aria-label="Ladderway"><img src="/assets/images/027.LADDERWAY.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="028.INTERCOM" aria-label="Intercom"><img src="/assets/images/028.INTERCOM.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="029.STORAGE.NON-ORGANIC" aria-label="Storage Non-Organic"><img src="/assets/images/029.STORAGE.NON-ORGANIC.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="029A.STORAGE.ORGANIC.(FOODSTUFFS)" aria-label="Storage Organic (Foodstuffs)"><img src="/assets/images/029A.STORAGE.ORGANIC.(FOODSTUFFS).svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+    <figure class="symbol-item" role="button" tabindex="0" data-symbol="030.COMPUTER.TERMINAL" aria-label="Computer Terminal"><img src="/assets/images/030.COMPUTER.TERMINAL.svg" alt="" loading="lazy" decoding="async" width="100" height="105"></figure>
+
+    <article class="credit-card" aria-label="Credit">
+      <div class="credit-text">
+        <p class="title">Semiotic Standard For All Commercial Trans-Stellar Utility Lifter And Heavy Element Transport Spacecraft</p>
+        <p class="author">Ron Cobb</p>
+        <p class="date"><time datetime="2078-04-16">April 16, 2078</time></p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<div class="symbol-label" id="symbolLabel" role="status" aria-live="polite"></div>
+
+<script src="/assets/js/script.js" defer></script>
+
+<!-- Google Analytics (deferred until idle) -->
+<script>
+(function(){
+  function loadGA(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5C5ET6DMNM';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-5C5ET6DMNM', { anonymize_ip: true });
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGA, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', function(){ setTimeout(loadGA, 1500); });
+  }
+})();
+</script>
 </body>
 </html>
