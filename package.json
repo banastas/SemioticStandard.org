@@ -1,0 +1,13 @@
+{
+  "name": "semioticstandard.org",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive reference for Ron Cobb's Semiotic Standard symbols.",
+  "scripts": {
+    "test": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
