@@ -85,6 +85,14 @@ Deploy the repository root to any static host. No build command or environment v
 
 When the rendered gallery changes, refresh `assets/images/SemioticStandard.png` at 1200 × 630 so the README and social preview continue to match production.
 
+## GitHub repository share image
+
+[Upload-ready PNG](assets/images/github-social-preview.png) · [Editable SVG](.github/social-preview.svg)
+
+The repository card follows the supplied 1280 × 640 template with an 80px safe margin. It pairs the project title with twelve unmodified symbol vectors and retains vector attribution. Export the SVG at its native dimensions when updating the PNG. This is a separate asset from the website's 1200 × 630 gallery preview.
+
+The PNG is prepared for the repository's social preview setting; adding the file to the repository does not configure that setting automatically.
+
 ## Accessibility
 
 Each symbol is a native button with a descriptive accessible name. Keyboard focus reveals the same label as pointer hover, Escape dismisses it, and touch interaction toggles it. The gallery includes a skip link, a polite live region, high-contrast focus styles, and a reduced-motion mode.

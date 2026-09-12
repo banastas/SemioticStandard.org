@@ -47,6 +47,12 @@ assert.equal(preview.toString('ascii', 1, 4), 'PNG', 'social preview must be a P
 assert.equal(preview.readUInt32BE(16), 1200, 'social preview must be 1200px wide');
 assert.equal(preview.readUInt32BE(20), 630, 'social preview must be 630px high');
 
+const repositoryPreview = readFileSync(resolve(root, 'assets/images/github-social-preview.png'));
+assert.equal(repositoryPreview.toString('ascii', 1, 4), 'PNG', 'repository share image must be a PNG');
+assert.equal(repositoryPreview.readUInt32BE(16), 1280, 'repository share image must match the 1280px template width');
+assert.equal(repositoryPreview.readUInt32BE(20), 640, 'repository share image must match the 640px template height');
+assert.match(read('.github/social-preview.svg'), /viewBox="0 0 1280 640"/, 'editable repository card must match the PNG dimensions');
+
 assert.match(headers, /Content-Security-Policy:/, 'a content security policy is required');
 assert.match(headers, /Strict-Transport-Security:/, 'HSTS is required');
 assert.ok(existsSync(resolve(root, 'THIRD_PARTY_NOTICES.md')), 'third-party notices are required');
@@ -57,4 +63,4 @@ for (const match of readme.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
   assert.ok(existsSync(resolve(root, target)), `README link target ${target} must exist`);
 }
 
-console.log('Validated 34 symbols, public metadata, security policy, preview image, and documentation links.');
+console.log('Validated 34 symbols, public metadata, security policy, both preview images, and documentation links.');

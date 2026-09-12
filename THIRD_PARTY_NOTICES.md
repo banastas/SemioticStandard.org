@@ -6,4 +6,6 @@ The SVG symbols in `assets/images/` are derived from [LouH's Semiotic Standard p
 
 LouH's adaptations are based on Ron Cobb's Semiotic Standard iconography for *Alien* (1979) and on icon recreations by [Brandon Gamm](https://thenounproject.com/gamm/collection/semiotic-standard-icons-from-alien/). The copies in this repository have been optimized for web delivery. `assets/images/SemioticStandard.png` is a rendered preview containing those vector adaptations.
 
+The repository share card (`.github/social-preview.svg` and `assets/images/github-social-preview.png`) also contains these vector adaptations. Its composition and scale have changed; the original symbol geometry is unchanged.
+
 The CC BY 4.0 license applies to the vector adaptations. The repository's MIT license covers the website code and does not relicense the underlying original artwork, film material, names, or trademarks.
